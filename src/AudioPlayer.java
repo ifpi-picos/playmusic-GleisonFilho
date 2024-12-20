@@ -7,7 +7,7 @@ public class AudioPlayer {
     boolean isPlaying = false;
     private int currentTrack = 0;
     private Album currentAlbum;
-    public String musicName = "Pagodeira";
+    public String musicName = "Pagodim";
 
     public AudioPlayer(Album album){
         this.currentAlbum = album;

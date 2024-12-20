@@ -10,9 +10,9 @@ public class App {
     public static String musicName = "Depressão";
     public static void main(String[] args) throws Exception {
 
-        Musica musica1 = new Musica("PÉRICLES - ATÉ QUE DUROU (AO VIVO) - VÍDEO OFICIAL", 310, "playmusic-GleisonFilho\\Ativos\\AteQueDurou.wav", "Pagode");
-        Musica musica2 = new Musica("Sozinho", 203, "playmusic-GleisonFilho\\Ativos\\Sozinho.wav", "Pagode");
-        Musica musica3 = new Musica("Você Não Me Ensinou A Te Esquecer", 212, "playmusic-GleisonFilho\\Ativos\\VCNME.wav", "MPB");
+        Musica musica1 = new Musica("PÉRICLES - ATÉ QUE DUROU (AO VIVO) - VÍDEO OFICIAL", 310, "src\\Ativos\\AteQueDurou.wav", "Pagode");
+        Musica musica2 = new Musica("Sozinho", 203, "src\\Ativos\\Sozinho.wav", "Pagode");
+        Musica musica3 = new Musica("Você Não Me Ensinou A Te Esquecer", 212, "src\\Ativos\\VCNME.wav", "MPB");
 
         Album album1 = new Album();
         album1.setNome("Pagodeira");
@@ -28,36 +28,36 @@ public class App {
         player.loadAudio(musica1.getArquivoAudio());
 
         // Criação dos botões com ícones
-        JButton prevButton = new JButton(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\previous.png"));
+        JButton prevButton = new JButton(new ImageIcon("src\\Ativos\\Imagens\\previous.png"));
         prevButton.setToolTipText("Voltar");
 
-        JButton playStopButton = new JButton(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\play.png"));
+        JButton playStopButton = new JButton(new ImageIcon("src\\Ativos\\Imagens\\play.png"));
         playStopButton.setToolTipText("Pausar");
 
-        JButton nextButton = new JButton(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\next.png"));
+        JButton nextButton = new JButton(new ImageIcon("src\\Ativos\\Imagens\\next.png"));
         nextButton.setToolTipText("Próxima");
 
         playStopButton.addActionListener(_ -> {
             if (player.isPlaying) {
                 player.stopAudio();
-                playStopButton.setIcon(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\play.png"));
+                playStopButton.setIcon(new ImageIcon("src\\Ativos\\Imagens\\play.png"));
             } else {
                 player.playAudio();
-                playStopButton.setIcon(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\pause.png"));
+                playStopButton.setIcon(new ImageIcon("src\\Ativos\\Imagens\\pause.png"));
             }
         });
 
         nextButton.addActionListener(_ -> {
             player.nextTrack();
-            playStopButton.setIcon(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\pause.png"));
+            playStopButton.setIcon(new ImageIcon("src\\Ativos\\Imagens\\pause.png"));
         });
 
         prevButton.addActionListener(_ -> {
             player.prevTrack();
-            playStopButton.setIcon(new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\pause.png"));
+            playStopButton.setIcon(new ImageIcon("src\\Ativos\\Imagens\\pause.png"));
         });
 
-        ImageIcon icon = new ImageIcon("playmusic-GleisonFilho\\Ativos\\Imagens\\image.png");
+        ImageIcon icon = new ImageIcon("src\\Ativos\\Imagens\\image.png");
         JOptionPane.showOptionDialog(
             null,
             player.musicName,
